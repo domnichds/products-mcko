@@ -13,7 +13,7 @@ def get_data(file_name):
     array = [el.split(';') for el in file.readlines()]
     result = []
     for string in array[1:]:
-        new_string = [string[0], string[1], string[2], float(string[3]), float(string[4])]
+        new_string = [string[0], string[1], string[2], float(string[3]), float(string[4])] # Перевод численных значений во float
         result.append(new_string)
     return result
 
@@ -21,7 +21,7 @@ def get_data(file_name):
 products = get_data('products.csv')
 summ_total = 0
 with open('products_new.csv', 'w') as file:
-    file.write('Category;product;Date;Price per unit;Count;Total\n')
+    file.write('Category;product;Date;Price per unit;Count;Total\n') # Запись шапку таблицы
     for i in range(len(products)):
         product = products[i]
         total = product[3] * product[4]
@@ -31,4 +31,4 @@ with open('products_new.csv', 'w') as file:
         write_string = f'{product[0]};{product[1]};{product[2]};{product[3]};{product[4]};{total};\n'
         file.write(write_string)
 print(summ_total)
-_ = input() # Пустое поле ввода для более конкретного отображение данных
+_ = input() # Пустое поле ввода для более конкретного отображения данных

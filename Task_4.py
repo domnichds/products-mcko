@@ -37,5 +37,5 @@ with open('products_promo.csv', 'w') as file:
     for i in range(len(products)):
         string = products[i]
         string.append(get_promocode(string))
-        write_string = f'{string[0]};{string[1]};{string[2]};{string[3]};{string[4]};{string[5]};\n'
+        write_string = f'{string[0]};{string[1]};{string[2]};{string[3]};{string[4]};{string[5]};\n' # Формирование строки для записи в csv
         file.write(write_string)

@@ -37,7 +37,7 @@ def past_sort(list, key):
 
 
 products = get_data('products.csv')
-table_hash = {}
+table_hash = {} # Словарь
 for string in products:
     if string[0] in list(table_hash.keys()):
         table_hash[string[0]] = table_hash[string[0]] + int(string[4])
@@ -47,6 +47,6 @@ list_table_hash = []
 for name in table_hash.keys():  # Цикл для перевода значений из словоря в список (необходимо для последующей сортировки)
     list_table_hash.append([name, table_hash[name]])
 list_table_hash = past_sort(list_table_hash, 1)
-for i in range(10): # цикл для вывода первых 10 значений списка list_table_hash
+for i in range(10): # Цикл для вывода первых 10 значений списка list_table_hash
     print(f'{list_table_hash[i][0]}, {list_table_hash[i][1]}')
-_ = input() # Пустое поле ввода для более конкретного отображение данных
+_ = input() # Пустое поле ввода для более конкретного отображения данных

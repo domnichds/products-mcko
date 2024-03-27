@@ -38,11 +38,11 @@ def alphabet_sort(list):
 
 products_sort = alphabet_sort(get_data('products.csv'))
 mv_category = products_sort[0][0]
-ma_lst = []
-ma_price = 0
+ma_lst = [] # Строка с макс. значение
+ma_price = 0 # Макс. значение цены
 for string in products_sort:
     if string[0] == mv_category and string[3] > ma_price:
         ma_price = string[3]
         ma_lst = string
 print(f'В категории: {mv_category} самый дорогой товар: {ma_lst[1]} его цена за единицу товара составляет {ma_lst[3]}')
-_ = input() # Пустое поле ввода для более конкретного отображение данных
+_ = input() # Пустое поле ввода для более конкретного отображения данных
